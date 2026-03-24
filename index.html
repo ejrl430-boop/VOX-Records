@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOX RECORDS</title>
+  
+  <!-- SEO Tags -->
+  <meta name="description" content="VOX Records - High-end Music Entertainment Company">
+  <meta property="og:title" content="VOX RECORDS">
+  <meta property="og:description" content="High-end Music Entertainment Company">
+  <meta property="og:type" content="website">
+  
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="index-page">
+
+  <header>
+    <a href="#" class="logo">VOX RECORDS</a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#artists">Artists</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#audition">Audition</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="video-background">
+    <!-- F.mp4 correctly linked from root directory -->
+    <video id="bgVideo" autoplay muted loop playsinline poster="">
+      <source src="./F.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <main class="hero">
+    <h1>VOX RECORDS</h1>
+    <p>Innovating the Future of Sound and Entertainment.</p>
+  </main>
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p>VOX Records is a leading entertainment company dedicated to discovering and nurturing world-class talent. With a focus on innovation and artistic excellence, we redefine the music experience.</p>
+  </section>
+
+  <section id="artists">
+    <h2 class="section-title">Our Artists</h2>
+    <p>Discover the voices that shape the future.</p>
+  </section>
+
+  <section id="news">
+    <h2 class="section-title">Latest news</h2>
+    <p>Stay updated with the latest releases and company announcements.</p>
+  </section>
+
+  <section id="audition">
+    <div class="audition-content">
+      <h2 class="section-title">AUDITION</h2>
+      <div class="guide-list">
+        <div class="guide-item">
+          <span class="guide-label">1. 지원 자격</span>
+          <p class="guide-text">2008년생~2013년생 남자</p>
+        </div>
+        <div class="guide-item">
+          <span class="guide-label">2. 지원 분야</span>
+          <p class="guide-text">보컬, 랩, 댄스</p>
+        </div>
+        <div class="guide-item">
+          <span class="guide-label">3. 사전 접수 기간</span>
+          <p class="guide-text">2026.04.01. ~ 2026.04.30.</p>
+        </div>
+        <div class="guide-item">
+          <span class="guide-label">4. 지원 방법</span>
+          <p class="guide-text">하단 '지원하기' 버튼을 클릭하여 접수</p>
+        </div>
+      </div>
+      <p class="guide-note">· 오디션 결과는 합격자에 한하여 개별 공지드립니다.</p>
+      <button id="btn-show-apply" class="cta-button-pill">지원하기</button>
+    </div>
+  </section>
+
+  <!-- Hidden Audition Application Form Section -->
+  <section id="audition-form-section" style="display: none; background: #fff; color: #000;">
+    <div class="apply-container">
+        <div class="apply-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; border-bottom: 2px solid #000; padding-bottom: 10px;">
+            <h2 style="font-size: 32px; font-weight: 800; color: #000; text-align: left; margin: 0;">APPLY</h2>
+            <button type="button" class="btn-close-apply" style="background: none; border: none; font-size: 14px; font-weight: 600; color: #666; cursor: pointer; text-decoration: underline;">닫기 ✕</button>
+        </div>
+
+        <form id="applicationForm" class="apply-form">
+            <div style="margin-bottom: 40px; text-align: left;">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label>이름 <span class="required" style="color:#ff3e3e; margin-left:3px;">*</span></label>
+                        <input type="text" name="name" required placeholder="이름을 입력하세요">
+                    </div>
+                    <div class="form-field">
+                        <label>성별 <span class="required" style="color:#ff3e3e; margin-left:3px;">*</span></label>
+                        <select name="gender" required>
+                            <option value="male">남자</option>
+                            <option value="female">여자</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>생년월일 <span class="required" style="color:#ff3e3e; margin-left:3px;">*</span> <span class="helper-text" style="font-size:12px; color:#888;">(지원가능: 2008~2013년생)</span></label>
+                    <div class="date-select-group">
+                        <select name="birth_year" required>
+                            <option value="">년도</option>
+                            <script>for(let i=2013; i>=2008; i--) document.write(`<option value="${i}">${i}</option>`);</script>
+                        </select>
+                        <select name="birth_month" required>
+                            <option value="">월</option>
+                            <script>for(let i=1; i<=12; i++) document.write(`<option value="${i}">${i}</option>`);</script>
+                        </select>
+                        <select name="birth_day" required>
+                            <option value="">일</option>
+                            <script>for(let i=1; i<=31; i++) document.write(`<option value="${i}">${i}</option>`);</script>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label>연락처 <span class="required" style="color:#ff3e3e; margin-left:3px;">*</span></label>
+                        <input type="tel" name="phone" required placeholder="숫자만 입력">
+                    </div>
+                    <div class="form-field">
+                        <label>비상연락처 <span class="required" style="color:#ff3e3e; margin-left:3px;">*</span></label>
+                        <input type="tel" name="emergency_phone" required placeholder="숫자만 입력">
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>이메일 <span class="required" style="color:#ff3e3e; margin-left:3px;">*</span></label>
+                    <input type="email" name="email" required placeholder="이메일 주소">
+                </div>
+            </div>
+
+            <div style="margin-bottom: 40px; text-align: left;">
+                <div class="form-field">
+                    <label>지원 분야 <span class="required" style="color:#ff3e3e; margin-left:3px;">*</span></label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label"><input type="checkbox" name="field" value="vocal"> 보컬</label>
+                        <label class="checkbox-label"><input type="checkbox" name="field" value="rap"> 랩</label>
+                        <label class="checkbox-label"><input type="checkbox" name="field" value="dance"> 댄스</label>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>자기소개</label>
+                    <textarea name="introduction" rows="4" placeholder="자기소개를 입력하세요"></textarea>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 40px; text-align: left;">
+                <div class="form-field">
+                    <label>사진 (초상 1장, 전신 1장) <span class="required" style="color:#ff3e3e; margin-left:3px;">*</span></label>
+                    <p class="file-desc" style="font-size:12px; color:#666; margin-bottom:10px;">jpg, png / 최대 50MB</p>
+                    <div class="file-input-wrapper">
+                        <input type="file" name="photos" multiple required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label>영상 (보컬/댄스 등) <span class="required" style="color:#ff3e3e; margin-left:3px;">*</span></label>
+                    <p class="file-desc" style="font-size:12px; color:#666; margin-bottom:10px;">mp4, mov / 최대 300MB</p>
+                    <div class="file-input-wrapper">
+                        <input type="file" name="videos" multiple required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="consent-section" style="background:#f9f9f9; padding:20px; text-align:left;">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="privacyConsent" required>
+                    <span style="color:#000;">개인정보 수집 및 이용 동의 [필수]</span>
+                </label>
+                <div class="consent-detail-content" style="font-size:12px; color:#666; height:100px; overflow-y:auto; border:1px solid #eee; padding:15px; margin-top:10px; background:#fff;">
+                    [개인정보 수집 및 이용 안내]<br>
+                    - 수집 목적: 오디션 지원 접수 및 심사<br>
+                    - 수집 항목: 이름, 성별, 생년월일, 연락처, 이메일, 사진, 영상 등<br>
+                    - 보유 기간: 오디션 종료 후 1년 내 파기
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button" style="width:100%; padding:20px; background:#000; color:#fff; font-size:18px; font-weight:700; border:none; cursor:pointer; margin-top:20px; transition:opacity 0.3s ease;">제출하기</button>
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="button" class="btn-close-apply" style="background: none; border: none; font-size: 14px; font-weight: 600; color: #666; cursor: pointer; text-decoration: underline;">접수 취소 (닫기)</button>
+            </div>
+        </form>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Get in touch with us for collaborations and inquiries.</p>
+  </section>
+
+  <!-- Location Icon & Title List -->
+  <div class="location-container" id="locationContainer">
+    <div class="title-list" id="titleList">
+      <!-- Dynamically filled -->
+    </div>
+    <div class="location-button" id="locationButton">
+      <svg class="location-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Video Popup Modal -->
+  <div class="video-popup-overlay" id="videoPopupOverlay">
+    <div class="video-popup-container">
+      <div class="video-popup-header">
+        <h3 class="video-popup-title" id="videoPopupTitle">Artist Title</h3>
+        <button class="video-popup-close" id="videoPopupClose">&times;</button>
+      </div>
+      <div class="video-popup-content">
+        <video id="popupVideo" controls>
+          <source src="./F.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="copyright">© 2026 VOX RECORDS. ALL RIGHTS RESERVED.</div>
+  </footer>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>

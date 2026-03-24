@@ -460,3 +460,117 @@ section {
 .submit-button:hover {
   opacity: 0.8;
 }
+
+/* --- Responsive Mobile Styles --- */
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  .logo {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  /* Hamburger Menu Toggle */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+    background: none;
+    border: none;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+  }
+
+  /* Burger Animation when Active */
+  header.nav-active .menu-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  header.nav-active .menu-toggle span:nth-child(2) { opacity: 0; }
+  header.nav-active .menu-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* Mobile Navigation Menu */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s ease;
+    z-index: 1000;
+  }
+
+  header.nav-active nav {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  /* Sections & Typography */
+  section {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* Audition Guide adjustment */
+  .guide-list {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .guide-label { font-size: 18px; }
+  .guide-text { font-size: 14px; }
+  .guide-note { margin-bottom: 40px; font-size: 12px; }
+
+  .cta-button-pill {
+    padding: 12px 40px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Footer adjustment */
+  footer {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .apply-container {
+    padding: 20px;
+  }
+}

@@ -142,4 +142,30 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('audition').scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
+
+    // --- Mobile Menu Toggle ---
+    const menuToggle = document.getElementById('menuToggle');
+    const header = document.getElementById('header');
+    
+    if (menuToggle && header) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            header.classList.toggle('nav-active');
+        });
+
+        // Close menu when clicking a link
+        const navLinks = header.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                header.classList.remove('nav-active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!header.contains(e.target) && header.classList.contains('nav-active')) {
+                header.classList.remove('nav-active');
+            }
+        });
+    }
 });
